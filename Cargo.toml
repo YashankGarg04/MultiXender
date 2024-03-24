@@ -1,0 +1,33 @@
+[package]
+name = "multisend_er"
+version = "1.0.0"
+authors = ["Yashank <Yashank.near>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib","rlib"]
+
+[dependencies]
+near-crypto = "0.20.1"
+near-sdk = "4.1.1"
+uint = { version = "0.9.3", default-features = false }
+getrandom ={ version = "0.2", features = ["js"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rust_decimal = "1.18.0"
+[patch.crates-io]
+parity-secp256k1 = { git = 'https://github.com/paritytech/rust-secp256k1.git' }
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+codegen-units = 1
+opt-level = 3
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
+
+[build]
+target = "wasm32-unknown-unknown"

@@ -1,0 +1,1 @@
+near call multi.fdaomultixender.near transfer '{"input" :"{\"recipients\":[{\"account_id\":\"yashank.near\",\"amount\":\"500000000000000000000000\"},{\"account_id\":\"flame1.near\",\"amount\":\"3000000000000000000000000\"},{\"account_id\":\"alphaflexhub.near\",\"amount\":\"500000000000000000000000\"}]}" }' --accountId yashank.near --amount 4.01
